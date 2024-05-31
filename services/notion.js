@@ -16,9 +16,8 @@ module.exports = async function getPomo() {
     filter: {
       "and": [
         {
-          "property": "Name",
+          "property": "Created",
           "date": {
-            "is_not_empty": true,
             "before": today
           }
         },
@@ -28,13 +27,23 @@ module.exports = async function getPomo() {
         //     "equals": 'Done'
         //   }
         // },
+      ],
+      "or": [
+        {
+          "property":"Last edited time",
+          "date": {
+            "on_or_after": today
+          }
+        }
       ]
     },
     sorts: [{
-      "property": "Created",
+      "property": "Date",
       "direction": "ascending"
     }]
   })
+
+  console.log(results)
 
 
   const rawPomos = results.map(page => {
