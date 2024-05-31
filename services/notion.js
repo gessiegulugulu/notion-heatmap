@@ -16,21 +16,22 @@ module.exports = async function getPomo() {
     filter: {
       "and": [
         {
-          "property": "Date",
+          "property": "Name",
           "date": {
             "is_not_empty": true,
             "before": today
           }
         },
-        {
-          "property": "Status",
-          "status": {
-            "equals": 'Done'
-          }
-        },]
+        // {
+        //   "property": "Status",
+        //   "status": {
+        //     "equals": 'Done'
+        //   }
+        // },
+      ]
     },
     sorts: [{
-      "property": "Date",
+      "property": "Created",
       "direction": "ascending"
     }]
   })
