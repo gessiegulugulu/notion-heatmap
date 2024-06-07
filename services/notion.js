@@ -10,6 +10,7 @@ const database_id = process.env.NOTION_DATABASE_ID
 const today = new Date().toISOString().slice(0, 10)
 
 module.exports = async function getPomo() {
+  console.log(results)
 
   const { results } = await notion.databases.query({
     database_id: `${database_id}`,
@@ -43,7 +44,7 @@ module.exports = async function getPomo() {
     }]
   })
 
-  console.log(results)
+
 
 
   const rawPomos = results.map(page => {
