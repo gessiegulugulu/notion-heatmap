@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/pomos', async (req, res) => {
+  console.log("say hi from /pomos")
   const pomos = await getPomos()
   res.json(pomos)
 })

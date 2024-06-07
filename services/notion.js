@@ -10,7 +10,7 @@ const database_id = process.env.NOTION_DATABASE_ID
 const today = new Date().toISOString().slice(0, 10)
 
 module.exports = async function getPomo() {
-  console.log(results)
+  console.log("say hi from getPomo")
 
   const { results } = await notion.databases.query({
     database_id: `${database_id}`,
