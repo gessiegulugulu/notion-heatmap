@@ -10,41 +10,30 @@ const database_id = process.env.NOTION_DATABASE_ID
 const today = new Date().toISOString().slice(0, 10)
 
 module.exports = async function getPomo() {
-  console.log("say hi from getPomo")
 
   const { results } = await notion.databases.query({
     database_id: `${database_id}`,
     filter: {
       "and": [
         {
-          "property": "Created",
+          "property": "Date",
           "date": {
+            "is_not_empty": true,
             "before": today
           }
         },
-        // {
-        //   "property": "Status",
-        //   "status": {
-        //     "equals": 'Done'
-        //   }
-        // },
-      ],
-      "or": [
         {
-          "property":"Last edited time",
-          "date": {
-            "on_or_after": today
+          "property": "Status",
+          "status": {
+            "equals": 'Done'
           }
-        }
-      ]
+        },]
     },
     sorts: [{
       "property": "Date",
       "direction": "ascending"
     }]
   })
-
-
 
 
   const rawPomos = results.map(page => {

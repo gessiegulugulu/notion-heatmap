@@ -1,3 +1,4 @@
+console.log("say hi from /pomos")
 const express = require('express')
 const getPomos = require('./services/notion')
 const path = require('path')
@@ -13,7 +14,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/pomos', async (req, res) => {
-  console.log("say hi from /pomos")
   const pomos = await getPomos()
   res.json(pomos)
 })
