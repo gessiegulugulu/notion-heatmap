@@ -15,14 +15,11 @@ module.exports = async function getPomo() {
   const { results } = await notion.databases.query({
     database_id: `${database_id}`,
     filter: {
-      "and": [
-        {
-          "property": "Created",
-          "date": {
-            "is_not_empty": true,
-            "on_or_before": today
-          }
-        }]
+      "property": "Created",
+      "date": {
+        "is_not_empty": true,
+        "on_or_before": today
+      }
     },
     sorts: [{
       "property": "Date",
