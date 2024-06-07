@@ -8,6 +8,7 @@ const notion = new Client({
 
 const database_id = process.env.NOTION_DATABASE_ID
 const today = new Date().toISOString().slice(0, 10)
+console.log(today)
 
 module.exports = async function getPomo() {
 
