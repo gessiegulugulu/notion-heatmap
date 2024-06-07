@@ -16,7 +16,7 @@ module.exports = async function getPomo() {
     filter: {
       "and": [
         {
-          "property": "Date",
+          "property": "Last edited time",
           "date": {
             "is_not_empty": true,
             "before": today
