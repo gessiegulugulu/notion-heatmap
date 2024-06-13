@@ -15,7 +15,7 @@ module.exports = async function getPomo() {
   const { results } = await notion.databases.query({
     database_id: `${database_id}`,
     filter: {
-      "property": "Created",
+      "property": "Last edited time",
       "date": {
         "is_not_empty": true,
         "on_or_before": today
