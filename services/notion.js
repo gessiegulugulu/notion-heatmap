@@ -20,11 +20,12 @@ module.exports = async function getPomo() {
         "is_not_empty": true,
         "equal": today
       }
-    },
-    sorts: [{
-      "timestamp": "last_edited_time",
-      "direction": "ascending"
-    }]
+    }
+    // ,
+    // sorts: [{
+    //   "timestamp": "last_edited_time",
+    //   "direction": "ascending"
+    // }]
   })
 
 
