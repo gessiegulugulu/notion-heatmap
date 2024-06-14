@@ -15,14 +15,14 @@ module.exports = async function getPomo() {
   const { results } = await notion.databases.query({
     database_id: `${database_id}`,
     filter: {
-      "property": "Last edited time",
-      "date": {
+      "timestamp": "last_edited_time",
+      "last_edited_time": {
         "is_not_empty": true,
         "on_or_before": today
       }
     },
     sorts: [{
-      "property": "Date",
+      "timestamp": "last_edited_time",
       "direction": "ascending"
     }]
   })
