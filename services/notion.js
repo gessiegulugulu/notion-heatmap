@@ -18,14 +18,14 @@ module.exports = async function getPomo() {
       "timestamp": "last_edited_time",
       "last_edited_time": {
         "is_not_empty": true,
-        "equal": today
+        "after": "2024-06-14"
       }
     }
-    // ,
-    // sorts: [{
-    //   "timestamp": "last_edited_time",
-    //   "direction": "ascending"
-    // }]
+    ,
+    sorts: [{
+      "timestamp": "created_time",
+      "direction": "ascending"
+    }]
   })
 
 
