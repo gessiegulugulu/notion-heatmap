@@ -18,7 +18,7 @@ module.exports = async function getPomo() {
       "timestamp": "last_edited_time",
       "last_edited_time": {
         "is_not_empty": true,
-        "after": "2024-06-14"
+        "before": today
       }
     }
     ,
