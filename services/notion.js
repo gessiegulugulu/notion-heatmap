@@ -31,8 +31,8 @@ module.exports = async function getPomo() {
 
   const rawPomos = results.map(page => {
     return {
-      "date": page.properties.Date.date.start,
-      "pomos": page.properties['Actual🍅'].number
+      "date": page.properties["Last edited time"].last_edited_time,
+      "pomos": 1
     }
   })
 
