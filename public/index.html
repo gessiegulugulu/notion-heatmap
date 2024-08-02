@@ -22,7 +22,10 @@
   <script>
     const cal = new CalHeatmap();
     const today = new Date();
-    const start = new Date(today.getFullYear(), today.getMonth() - 8, 1);
+
+    const start = today.getMonth() < 8 ? 
+    new Date(today.getFullYear() - 1, today.getMonth() + 4, 1) : 
+    new Date(today.getFullYear(), today.getMonth() - 8, 1);
 
 
     cal.paint({
@@ -52,7 +55,7 @@
         gutter: 4
       },
       date: {
-        start: start,
+        start: start,//new Date('2024-08-01'),
         timezone: 'Asia/Shanghai'
       },
       range: 10,
