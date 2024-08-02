@@ -1,4 +1,3 @@
-console.log("say hi from /pomos")
 const express = require('express')
 const getPomos = require('./services/notion')
 const path = require('path')
