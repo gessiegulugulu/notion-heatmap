@@ -2,6 +2,8 @@
 
 Generate github-like heatmaps based on the notion database, deployed in vercel
 
+<img src="image.png" width="800" align="center">
+
 Public link: [click here](https://notion-heatmap.vercel.app/)
 
 ## Prepare First
