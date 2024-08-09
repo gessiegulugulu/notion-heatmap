@@ -23,7 +23,8 @@
     const cal = new CalHeatmap();
     const today = new Date();
 
-    const start = today.getMonth() < 8 ? 
+    // Start from the 4th month of the previous year
+    const startDate = today.getMonth() < 8 ? 
     new Date(today.getFullYear() - 1, today.getMonth() + 4, 1) : 
     new Date(today.getFullYear(), today.getMonth() - 8, 1);
 
@@ -55,18 +56,19 @@
         gutter: 4
       },
       date: {
-        start: new Date('2023-12-01'),
-        timezone: 'Asia/Shanghai'
+        timezone: 'Asia/Shanghai',
+        start: startDate
       },
       range: 10,
       scale: {
         color: {
-          domain: [2, 4, 6, 8, 10],
+          domain: [0,1,2,3,4,5],
           type: 'threshold',
-          scheme: 'Spectral',
+          scheme: 'greens',
         }
       }
-    }, [
+    }, 
+    [
       [
         Tooltip,
         {
@@ -87,7 +89,6 @@
         },
       ],
     ]);
-    // render(<div id="cal-heatmap"></div>);
   </script>
 </body>
 
